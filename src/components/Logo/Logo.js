@@ -15,7 +15,6 @@ const Link = styled.a`
   color: inherit;
   position: absolute;
   left: 32px;
-  margin-top: -2px;
   text-decoration: none;
 `;
 

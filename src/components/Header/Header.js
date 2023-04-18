@@ -41,7 +41,7 @@ const Nav = styled.nav`
   display: flex;
   gap: 48px;
   justify-content: center;
-  margin-bottom: -2px;
+  margin-bottom: -4px;
 `;
 
 const NavLink = styled.a`
