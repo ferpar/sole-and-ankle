@@ -34,6 +34,8 @@ const ShoeCard = ({
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
+        {variant === "on-sale" && <SaleFlag>Sale</SaleFlag>}
+        {variant === "new-release" && <NewFlag>Just Released!</NewFlag>}
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
@@ -41,6 +43,9 @@ const ShoeCard = ({
         <Row>
           <Name>{name}</Name>
           <Price>{formatPrice(price)}</Price>
+          {variant === "on-sale" && (
+            <SalePrice>{formatPrice(salePrice)}</SalePrice>
+          )}
         </Row>
         <Row>
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
@@ -55,11 +60,13 @@ const Link = styled.a`
   color: inherit;
   flex-grow: 1;
   flex-basis: 340px;
+  isolation: isolate;
 `;
 
 const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const ImageWrapper = styled.div`
@@ -74,6 +81,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
+  position: relative;
 `;
 
 const Name = styled.h3`
@@ -87,9 +95,29 @@ const ColorInfo = styled.p`
   color: ${COLORS.gray[700]};
 `;
 
+const SaleFlag = styled.div`
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  background-color: ${COLORS.primary};
+  color: ${COLORS.white};
+  padding: 8px 10px;
+  border-radius: 2px;
+  font-size: ${14 / 16}rem;
+  font-weight: ${WEIGHTS.bold};
+  z-index: 1;
+`;
+
+const NewFlag = styled(SaleFlag)`
+  background-color: ${COLORS.secondary};
+`;
+
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+  position: absolute;
+  top: 24px;
+  right: 0;
 `;
 
 export default ShoeCard;
