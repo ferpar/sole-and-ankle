@@ -29,8 +29,8 @@ const Wrapper = styled.div`
   display: flex;
   font-size: 0.875rem;
   gap: 24px;
-  height: 40px;
   justify-content: flex-start;
+  min-height: 40px;
   padding: 0 32px;
 `;
 
