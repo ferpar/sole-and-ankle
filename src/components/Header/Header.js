@@ -47,6 +47,9 @@ const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin-bottom: -4px;
+  margin-left: 48px;
+  margin-right: 48px;
+  overflow-x: auto;
 `;
 
 const NavLink = styled.a`
