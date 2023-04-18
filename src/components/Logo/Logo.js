@@ -13,8 +13,6 @@ const Logo = (props) => {
 
 const Link = styled.a`
   color: inherit;
-  position: absolute;
-  left: 32px;
   text-decoration: none;
 `;
 
