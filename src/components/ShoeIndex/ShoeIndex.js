@@ -46,6 +46,9 @@ const Wrapper = styled.div`
 
 const LeftColumn = styled.div`
   flex: 0 0 248px;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
 `;
 
 const MainColumn = styled.div`
